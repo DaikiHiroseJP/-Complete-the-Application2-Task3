@@ -2,10 +2,6 @@ class BooksController < ApplicationController
   before_action :ensure_user, only: [:edit, :update, :destroy]
 
 
-  def new
-    @book = Book.new
-  end
-
   def create
     @current = current_user
     @book = Book.new(book_params)
